@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 sh 'dotnet build'
-                sh 'dotnet run'
+                sh 'dotnet test'
             }
         }
         stage('Typescript build and test') {
