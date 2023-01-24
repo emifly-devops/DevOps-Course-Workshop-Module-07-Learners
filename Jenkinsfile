@@ -1,3 +1,3 @@
-﻿pipeline {
+pipeline {
     agent none
 }
