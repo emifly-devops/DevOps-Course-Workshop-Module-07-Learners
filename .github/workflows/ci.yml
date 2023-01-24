@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+      - name: Display .NET version
+        run: dotnet --version
       - name: Build C# code
         run: dotnet build
       - name: Run C# tests
