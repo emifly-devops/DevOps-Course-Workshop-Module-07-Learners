@@ -8,9 +8,15 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Display .NET versions
-        run: dotnet --list-sdks
       - name: Build C# code
         run: dotnet build
       - name: Run C# tests
         run: dotnet test
+      - name: Install Node dependencies
+        run: cd DotnetTemplate.Web && npm install
+      - name: Build TypeScript code
+        run: cd DotnetTemplate.Web && npm run build
+      - name: Run TypeScript tests
+        run: cd DotnetTemplate.Web && npm test
+      - name: Run TypeScript linter
+        run: cd DotnetTemplate.Web && npm run lint
