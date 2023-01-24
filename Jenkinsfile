@@ -1,5 +1,9 @@
 pipeline {
     agent none
+    environment {
+        DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
+        XDG_DATA_HOME = "/tmp/XDG_DATA_HOME"
+    }
     stages {
         stage('.NET build and test') {
             agent {
